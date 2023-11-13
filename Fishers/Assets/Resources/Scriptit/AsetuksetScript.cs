@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class AsetuksetScript : MonoBehaviour
 {
     public TMP_Dropdown resolutionDropdown;
-    Resolution[] resolutions; 
+    Resolution[] resolutions;
     public void Start()
     {
         resolutions = Screen.resolutions;
@@ -28,6 +29,10 @@ public class AsetuksetScript : MonoBehaviour
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
+    }
+    public void AsetuksetTakaisin()
+    {
+        SceneManager.LoadScene("Mainmenu");
     }
     public void ‰‰nislider(float ‰‰nenvoimmakuus)
     {

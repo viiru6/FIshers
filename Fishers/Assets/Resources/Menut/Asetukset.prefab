@@ -1809,9 +1809,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7326790163987131334}
-        m_TargetAssemblyTypeName: Menusciptit, Assembly-CSharp
-        m_MethodName: Takaisin_asetukset_mainmenuun
+      - m_Target: {fileID: 2311845615762683974}
+        m_TargetAssemblyTypeName: AsetuksetScript, Assembly-CSharp
+        m_MethodName: AsetuksetTakaisin
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1832,6 +1832,7 @@ GameObject:
   - component: {fileID: 5740971071886242401}
   - component: {fileID: 7326790163987131334}
   - component: {fileID: 2311845615762683974}
+  - component: {fileID: 1179508737511456404}
   m_Layer: 0
   m_Name: Asetukset
   m_TagString: Untagged
@@ -1867,6 +1868,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b820c694fe2b3fb47a0661870f42044e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainmenu: {fileID: 7475501108936102359, guid: aad61e9b20940e745974bc49e6b9b12c, type: 3}
+  PauseScript: {fileID: 0}
 --- !u!114 &2311845615762683974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1879,7 +1882,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f9edc3cae87f004e875d2b66c9ad1d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Menusciptit: {fileID: 1179508737511456404}
   resolutionDropdown: {fileID: 8533225916806815502}
+--- !u!114 &1179508737511456404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5740971071886242400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b820c694fe2b3fb47a0661870f42044e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainmenu: {fileID: 0}
+  PauseScript: {fileID: 0}
 --- !u!1 &5740971071979270878
 GameObject:
   m_ObjectHideFlags: 0
