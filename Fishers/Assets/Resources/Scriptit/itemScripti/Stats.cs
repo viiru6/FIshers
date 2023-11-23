@@ -20,4 +20,5 @@ public class Stats : ScriptableObject
 
     [Tooltip("pelin sisäiset päivät kuleneet")]
     public int päivätPelattu;
+    public int peliLadattuKerrat;
 }

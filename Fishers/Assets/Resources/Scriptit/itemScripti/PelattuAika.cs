@@ -9,7 +9,7 @@ public class PelattuAika : MonoBehaviour
     {
         StartCoroutine("PlayTimer");
     }
-    private IEnumerator PlayTimer()
+    private IEnumerator PlayTimer()//laskee pelatun ajan tunneissa
     {
         while (true)
         {

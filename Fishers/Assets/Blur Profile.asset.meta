@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Fishers/Assets/Blur Profile.asset.meta
 guid: 103b2869770c253419066fe75cdca9cc
+========
+guid: f0867f1abda5710408544b0ec38f6485
+>>>>>>>> 314397f69ca0a1ab750976c5ef80cc3b0f8098d8:Fishers/Assets/Resources/Itemit/Syötti_mato.asset.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 11400000

@@ -7,7 +7,7 @@ public class DebugMenuScript : MonoBehaviour
     public InventoryManager InventoryManager;
     public GameObject DebugMenu;
     bool DebugMenuActive;
-    void Update()
+    void Update()//debugmenun tiedot p‰ivitet‰‰n kun debugmenu on auki
     {
         if (DebugMenu.active) { InventoryManager.DebugInfo(); }
 

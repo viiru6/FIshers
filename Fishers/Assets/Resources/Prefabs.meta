@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Fishers/Assets/Resources/Prefabs.meta
 guid: 946146070fc82e54ab119b0f5eada359
+========
+guid: 5509d3d98bc9fed409acf2ab1bef8f60
+>>>>>>>> 314397f69ca0a1ab750976c5ef80cc3b0f8098d8:Fishers/Assets/Resources/Kalat.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
