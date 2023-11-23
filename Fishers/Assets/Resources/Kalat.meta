@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Fishers/Assets/Resources/Kalat.meta
 guid: 5509d3d98bc9fed409acf2ab1bef8f60
+========
+guid: 7989b6bc3c9485d4e824a34a1ec4ff60
+>>>>>>>> 314397f69ca0a1ab750976c5ef80cc3b0f8098d8:Fishers/Assets/Resources/Itemit.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

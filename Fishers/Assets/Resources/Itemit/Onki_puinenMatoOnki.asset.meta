@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Fishers/Assets/Resources/Itemit/Onki_puinenMatoOnki.asset.meta
 guid: a158ffe1226331543aaf39e1ca92b969
+========
+guid: 42b740c029d8e3547bae62c1d56628a5
+>>>>>>>> 314397f69ca0a1ab750976c5ef80cc3b0f8098d8:Fishers/Assets/Resources/Itemit/PlayerStats.asset.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 11400000

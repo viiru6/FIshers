@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Fishers/Assets/Resources/Itemit/Syötti_mato.asset.meta
 guid: f0867f1abda5710408544b0ec38f6485
+========
+guid: c1a7da9cda7db754b8ec3d219457ca34
+>>>>>>>> 314397f69ca0a1ab750976c5ef80cc3b0f8098d8:Fishers/Assets/Resources/Kalat/Ahven.asset.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 11400000
