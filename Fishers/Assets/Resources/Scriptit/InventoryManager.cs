@@ -10,11 +10,11 @@ public class InventoryManager : MonoBehaviour
     public GameObject inventorySlot;
     public DebugMenuScript DebugMenuScript;
     private int fishCaught;
-    private void Awake()
+    private void Awake()//luo singletonin
     {
         Instance = this;
     }
-    public void Add(KalaItem kala)
+    public void Add(KalaItem kala)//lisää kalan inventoryyn jos sitä ei sieltä vielä löydy. muuten nostaa stackin kokoa ja refreshaa inventoryn
     {
         fishCaught++;
         if (inventory.Contains(kala))
@@ -26,9 +26,9 @@ public class InventoryManager : MonoBehaviour
             kala.currentStack = 1;
             inventory.Add(kala);
         }
-        ResfreshInventory();
+        RefreshInventory();
     }
-    public void ResfreshInventory()
+    public void RefreshInventory()//poistaa inventoryn sisällön näkyviltä ja piirtää sen uudelleen
     {
         Clean();
         for (int i = 0; i < inventory.Count; i++)
@@ -41,14 +41,14 @@ public class InventoryManager : MonoBehaviour
             itemCount.text = inventory[i].currentStack.ToString();
         }
     }
-    public void Clean()
+    public void Clean()//tyhjentää näkyvän inventoryn
     {
         foreach (Transform childtransform in inventoryContent)
         {
             Destroy(childtransform.gameObject);
         }
     }
-    public void RemoveItems()
+    public void RemoveItems()//tyhjentää näkyvän inventoryn ja poistaa inventoryn sisällön
     {
         foreach (Transform childtransform in inventoryContent)
         {
@@ -71,7 +71,7 @@ public class InventoryManager : MonoBehaviour
     private int invVal = 0;
     public Stats stats;
     public void DebugInfo()
-    {
+    {//väliaikainen
         int inventoryValue = 0;
         int totalStack = 0;
         int har = 0;

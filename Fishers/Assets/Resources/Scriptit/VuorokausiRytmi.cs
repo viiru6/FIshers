@@ -20,14 +20,14 @@ public class VuorokausiRytmi : MonoBehaviour
 
     void Start()
     {
-        ppv = gameObject.GetComponent<Volume>();
+        ppv = gameObject.GetComponent<Volume>();//etsii yö efekti voluumin
     }
     void FixedUpdate()
     {
         CalcTime();
         DisplayTime();
     }
-    public void CalcTime()
+    public void CalcTime()//laskee sekunnit minuutit ja tunnit
     {
         seconds += Time.fixedDeltaTime * tick;
 
@@ -49,7 +49,7 @@ public class VuorokausiRytmi : MonoBehaviour
         }
         ControlPPV();
     }
-    public void ControlPPV() //säätää yö efekti voluumin arvoa Weight jotta yö efektin voimakkuus on oikea
+    public void ControlPPV() //säätää yö efekti voluumin arvoa Weight jotta yö efektin voimakkuus/paino on oikea
     {
         if (hours >= 21 && hours < 22)
         {
@@ -60,8 +60,7 @@ public class VuorokausiRytmi : MonoBehaviour
             ppv.weight = 1 - (float)mins / 60;
         }
     }
-
-    public void DisplayTime()
+    public void DisplayTime()//formatoi ja näyttää kellon ja päivän pelaajalle
     {
         timeDisplayText.text = string.Format("Kello {0:00}:{1:00}", hours, mins);
         dayDisplayText.text = "Päivä: " + days;

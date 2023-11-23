@@ -13,8 +13,4 @@ public class KalaItem : ScriptableObject
     public int currentStack = 1;
     public int startTime = 0;
     public int endTime = 24;
-
-    public float weight = 0;
-    public float minWeight = 0.001f;
-    public float maxWeight = 100f;
 }
