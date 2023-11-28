@@ -18,3 +18,5 @@ MonoBehaviour:
   rarity: sininen
   value: 10
   currentStack: 1
+  startTime: 0
+  endTime: 24

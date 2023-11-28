@@ -13,9 +13,9 @@ public class VuorokausiRytmi : MonoBehaviour
     public Volume ppv;
 
     public float tick;
-    public float seconds;
-    public int mins;
-    public int hours = 6;
+    public static float seconds;
+    public static int mins = 59;
+    public static int hours = 7;
     public int days = 1;
 
     void Start()
@@ -35,6 +35,7 @@ public class VuorokausiRytmi : MonoBehaviour
         {
             seconds = 0;
             mins += 1;
+            Stats.aikaSekuntteina++;
         }
         if (mins >= 60)
         {
@@ -63,6 +64,6 @@ public class VuorokausiRytmi : MonoBehaviour
     public void DisplayTime()//formatoi ja n‰ytt‰‰ kellon ja p‰iv‰n pelaajalle
     {
         timeDisplayText.text = string.Format("Kello {0:00}:{1:00}", hours, mins);
-        dayDisplayText.text = "P‰iv‰: " + days;
+        dayDisplayText.text = "P‰iv‰: " + Stats.p‰iv‰tPelattu;
     }
 }

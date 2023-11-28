@@ -5,17 +5,93 @@ using TMPro;
 public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager Instance;
+    public VuorokausiRytmi VuorokausiRytmi;
+    public List<QuestItem> quests = new List<QuestItem>();
     public List<KalaItem> inventory = new List<KalaItem>();
     public Transform inventoryContent;
     public GameObject inventorySlot;
     public DebugMenuScript DebugMenuScript;
     private int fishCaught;
+
     private void Awake()//luo singletonin
     {
         Instance = this;
     }
-    public void Add(KalaItem kala)//lisää kalan inventoryyn jos sitä ei sieltä vielä löydy. muuten nostaa stackin kokoa ja refreshaa inventoryn
+    private void OnDestroy()
     {
+        foreach (QuestItem questItem in quests)
+        {
+            questItem.QuestIsActive = false;
+            questItem.criteriaCurrent = 0;
+        }
+    }
+    private void Update()
+    {
+        if (VuorokausiRytmi.hours == 8 && VuorokausiRytmi.mins == 0 && VuorokausiRytmi.seconds == 0)
+        {
+            GiveQuest();
+        }
+    }
+    public void QuestCompleted(QuestItem questItem)
+    {
+        lompakko += questItem.questReward;
+    }
+    public void QuestCriteriaCheck(KalaItem kala)
+    {
+        foreach (QuestItem quest in quests)
+        {
+            if (quest.startHour > quest.endHour)
+            {
+                if ((VuorokausiRytmi.hours < 24 && quest.startHour <= VuorokausiRytmi.hours) || VuorokausiRytmi.hours >= 0 && quest.endHour > VuorokausiRytmi.hours)//yö questeille
+                {
+                    if (kala.rarity == quest.rarity)
+                    {
+                        quest.criteriaCurrent++;
+                        if (quest.criteriaCurrent >= quest.criteriaNeeded)
+                        {
+                            QuestCompleted(quest);
+                            quest.QuestIsActive = false;
+                        }
+                    }
+                    if (quest.anyRarity)
+                    {
+                        quest.criteriaCurrent++;
+                        if (quest.criteriaCurrent >= quest.criteriaNeeded)
+                        {
+                            QuestCompleted(quest);
+                            quest.QuestIsActive = false;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                if (quest.startHour < VuorokausiRytmi.hours && quest.endHour > VuorokausiRytmi.hours)//päivä questeille
+                {
+                    if (kala.rarity == quest.rarity)
+                    {
+                        quest.criteriaCurrent++;
+                        if (quest.criteriaCurrent >= quest.criteriaNeeded)
+                        {
+                            QuestCompleted(quest);
+                            quest.QuestIsActive = false;
+                        }
+                    }
+                    if (quest.anyRarity)
+                    {
+                        quest.criteriaCurrent++;
+                        if (quest.criteriaCurrent >= quest.criteriaNeeded)
+                        {
+                            QuestCompleted(quest);
+                            quest.QuestIsActive = false;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    public void Add(KalaItem kala)//lisää kalan inventoryyn jos sitä ei sieltä vielä löydy. muuten nostaa stackin kokoa. lopuksi refreshaa inventoryn // suorittaa myös questien edistymisen tarkistuksen
+    {        
         fishCaught++;
         if (inventory.Contains(kala))
         {
@@ -27,10 +103,45 @@ public class InventoryManager : MonoBehaviour
             inventory.Add(kala);
         }
         RefreshInventory();
+        
+        RefreshQuestPanel();
+        QuestCriteriaCheck(kala);
+    }
+    public Transform questContent;
+    public GameObject questPrefab;
+    // harmaa = D9D9D9
+    // vihreä = 00FF00
+    // sininen = 0000FF
+    // liila = FF00FF
+    // kultainen = FFEB04    
+    public void RefreshQuestPanel()
+    {
+        CleanQuests();
+        for (int i = 0; i < quests.Count; i++)
+        {
+            if (quests[i].QuestIsActive)
+            {
+                GameObject QuestSlot = Instantiate(questPrefab, questContent);
+                var title = QuestSlot.transform.Find("title").GetComponent<TextMeshProUGUI>();
+                string shownDesc = string.Format(quests[i].desc, quests[i].displaydRarity, quests[i].criteriaCurrent, quests[i].criteriaNeeded);
+                title.text = shownDesc;
+            }
+        }
+    }
+    public void GiveQuest()//voi antaa vaan kaksi tai yksi questiä
+    {
+        for (int q = 0; q < 3; q++)
+        {
+            quests[Random.RandomRange(0, quests.Count)].QuestIsActive = true;
+        }
+        foreach (QuestItem questItem in quests)
+        {
+            questItem.criteriaCurrent = 0;
+        }
     }
     public void RefreshInventory()//poistaa inventoryn sisällön näkyviltä ja piirtää sen uudelleen
     {
-        Clean();
+        CleanInventory();
         for (int i = 0; i < inventory.Count; i++)
         {
             GameObject InventorySlot = Instantiate(inventorySlot, inventoryContent);
@@ -41,7 +152,22 @@ public class InventoryManager : MonoBehaviour
             itemCount.text = inventory[i].currentStack.ToString();
         }
     }
-    public void Clean()//tyhjentää näkyvän inventoryn
+    public void CleanQuests()
+    {
+        foreach (Transform childtransform in questContent)
+        {
+            Destroy(childtransform.gameObject);
+        }
+    }
+    public void RemoveQuest(QuestItem quest)
+    {
+        foreach (Transform childtransform in questContent)
+        {
+            Destroy(childtransform.gameObject);
+            quests.Remove(quest);
+        }
+    }
+    public void CleanInventory()//tyhjentää näkyvän inventoryn
     {
         foreach (Transform childtransform in inventoryContent)
         {
@@ -70,8 +196,11 @@ public class InventoryManager : MonoBehaviour
     }
     private int invVal = 0;
     public Stats stats;
+
+
+    //väliaikainen
     public void DebugInfo()
-    {//väliaikainen
+    {
         int inventoryValue = 0;
         int totalStack = 0;
         int har = 0;

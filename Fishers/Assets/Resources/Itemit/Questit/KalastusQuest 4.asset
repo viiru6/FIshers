@@ -9,14 +9,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5243fa14578eb18449d3c52e5b5f6ee2, type: 3}
-  m_Name: Ahven
+  m_Script: {fileID: 11500000, guid: d5e34f97cb7e40a4285b3d84962c25b4, type: 3}
+  m_Name: KalastusQuest 4
   m_EditorClassIdentifier: 
   id: 4
-  itemName: Ahven
-  color: {r: 0, g: 1, b: 0, a: 1}
+  desc: nappaa kaloja({0}) {1}/{2}
+  criteriaNeeded: 50
+  criteriaCurrent: 0
+  questReward: 3
+  startHour: 0
+  endHour: 24
+  displaydRarity: "<color=#00FF00>vihre\xE4</color>"
   rarity: "vihre\xE4"
-  value: 5
-  currentStack: 1
-  startTime: 21
-  endTime: 6
+  QuestIsActive: 0
+  anyRarity: 0
