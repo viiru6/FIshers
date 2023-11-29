@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 9
   itemName: Siika
-  color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  color: {r: 1, g: 0.92876494, b: 0.106000006, a: 1}
   rarity: kultainen
   value: 50
   currentStack: 1
+  startTime: 0
+  endTime: 24
