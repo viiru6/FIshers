@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: KalastusQuest 5
   m_EditorClassIdentifier: 
   id: 5
-  desc: nappaa kaloja({0}) {1}/{2}
+  desc: nappaa kaloja({0}) {1}/{2} {3}
   criteriaNeeded: 1000
   criteriaCurrent: 0
   questReward: 9

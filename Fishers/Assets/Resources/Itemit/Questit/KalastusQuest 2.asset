@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: KalastusQuest 2
   m_EditorClassIdentifier: 
   id: 2
-  desc: "nappaa kaloja y\xF6ll\xE4({0}) {1}/{2} (21:00-6:00)"
+  desc: "nappaa kaloja y\xF6ll\xE4({0}) {1}/{2} (21:00-6:00) {3}"
   criteriaNeeded: 5
   criteriaCurrent: 0
   questReward: 2

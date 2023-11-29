@@ -123,14 +123,14 @@ public class InventoryManager : MonoBehaviour
             {
                 GameObject QuestSlot = Instantiate(questPrefab, questContent);
                 var title = QuestSlot.transform.Find("title").GetComponent<TextMeshProUGUI>();
-                string shownDesc = string.Format(quests[i].desc, quests[i].displaydRarity, quests[i].criteriaCurrent, quests[i].criteriaNeeded);
+                string shownDesc = string.Format(quests[i].desc, quests[i].displaydRarity, quests[i].criteriaCurrent, quests[i].criteriaNeeded,quests[i].questReward);
                 title.text = shownDesc;
             }
         }
     }
     public void GiveQuest()//voi antaa vaan kaksi tai yksi questiä
     {
-        for (int q = 0; q < 3; q++)
+        for (int q = 0; q <= quests.Count; q++)
         {
             quests[Random.RandomRange(0, quests.Count)].QuestIsActive = true;
         }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: KalastusQuest 3
   m_EditorClassIdentifier: 
   id: 3
-  desc: nappaa kaloja ({0}) {1}/{2} (12:00-18:00)
+  desc: nappaa kaloja ({0}) {1}/{2} (12:00-18:00) {3}
   criteriaNeeded: 10
   criteriaCurrent: 0
   questReward: 3
