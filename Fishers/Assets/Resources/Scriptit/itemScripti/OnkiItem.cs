@@ -9,4 +9,5 @@ public class OnkiItem : ScriptableObject
     public string id;
     [Tooltip("Matalempi = parempi")]
     public float power;
+    public float cooldown;
 }

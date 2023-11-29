@@ -13,7 +13,7 @@ public class Kalamekaniikatscipt : MonoBehaviour
     public VuorokausiRytmi VuorokausiRytmi;
     public OnkiItem Onki;
     public SyöttiItem Syötti;
-    [SerializeField] private Cooldown cooldown;
+    [SerializeField] public Cooldown cooldown;
 
     private int numberOfRolls = 1;
     GameObject kalanappu;
@@ -41,7 +41,7 @@ public class Kalamekaniikatscipt : MonoBehaviour
     public void KalastaNappi()//arpoo pelaajalle kalan tai kalat riippuen heittojen määrästä. sisältää harvinaisuuden, cooldownin ja statsit.
     {
         if (cooldown.isCoolingdown) return;
-
+        cooldown.CooldownTime = Onki.cooldown;
         Stats.KerratKalastettu++;
 
         for (int i = 0; numberOfRolls >= i; i++)
