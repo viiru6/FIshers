@@ -10,16 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d5e34f97cb7e40a4285b3d84962c25b4, type: 3}
-  m_Name: KalastusQuest 3
+  m_Name: new Quest 11
   m_EditorClassIdentifier: 
-  id: 3
-  desc: nappaa kaloja ({0}) {1}/{2} (12:00-18:00) {3}
-  criteriaNeeded: 10
+  id: 11
+  desc: nappaa kaloja
+  descInfo: ({0}) {1}/{2} {3}
+  criteriaNeeded: 100
   criteriaCurrent: 0
-  questReward: 3
-  startHour: 12
-  endHour: 18
-  displaydRarity: <color=#D9D9D9>harmaa</color>
-  rarity: harmaa
+  questReward: 25
+  startHour: 0
+  endHour: 24
+  displaydRarity: <color=#63F7FF>kaikki</color>
+  rarity: 
   QuestIsActive: 0
-  anyRarity: 0
+  anyRarity: 1

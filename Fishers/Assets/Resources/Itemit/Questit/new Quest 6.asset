@@ -10,16 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d5e34f97cb7e40a4285b3d84962c25b4, type: 3}
-  m_Name: KalastusQuest 4
+  m_Name: new Quest 6
   m_EditorClassIdentifier: 
-  id: 4
-  desc: nappaa kaloja({0}) {1}/{2} {3}
-  criteriaNeeded: 50
+  id: 6
+  desc: "nappaa kaloja y\xF6ll\xE4"
+  descInfo: ({0}) {1}/{2} {3}
+  criteriaNeeded: 25
   criteriaCurrent: 0
-  questReward: 3
-  startHour: 0
-  endHour: 24
-  displaydRarity: "<color=#00FF00>vihre\xE4</color>"
-  rarity: "vihre\xE4"
+  questReward: 15
+  startHour: 21
+  endHour: 6
+  displaydRarity: <color=#D9D9D9>harmaa</color>
+  rarity: harmaa
   QuestIsActive: 0
   anyRarity: 0

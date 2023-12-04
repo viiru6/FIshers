@@ -13,7 +13,7 @@ public class Kalamekaniikatscipt : MonoBehaviour
     public VuorokausiRytmi VuorokausiRytmi;
     public OnkiItem Onki;
     public SyöttiItem Syötti;
-    [SerializeField] public Cooldown cooldown;
+    [SerializeField] private Cooldown cooldown;
 
     private int numberOfRolls = 1;
     GameObject kalanappu;
@@ -67,7 +67,7 @@ public class Kalamekaniikatscipt : MonoBehaviour
     public List<KalaItem> vihreä = new List<KalaItem>();
     public List<KalaItem> sininen = new List<KalaItem>();
     public List<KalaItem> liila = new List<KalaItem>();
-    public List<KalaItem> kultainen = new List<KalaItem>();
+    public List<KalaItem> punainen = new List<KalaItem>();
     public void valitseKala(List<KalaItem> currentRarity)//laskee saaatavilla olevat kalat ja arpoo niistä jonkin pelaajalle
     {
         List<KalaItem> availablefish = new List<KalaItem>();
@@ -80,7 +80,6 @@ public class Kalamekaniikatscipt : MonoBehaviour
         }
         InventoryManager.Instance.Add(availablefish[Random.RandomRange(0, availablefish.Count)]);
     }
-
     public GameObject miniGameTarget;
     bool movingToRight = true;
     public GameObject MinipeliNappi;
@@ -110,7 +109,7 @@ public class Kalamekaniikatscipt : MonoBehaviour
         StopMinigame();
         if (pos >= -20 && pos < 10)
         {
-            valitseKala(kultainen); Stats.KalojaKerättyKultainen++;
+            valitseKala(punainen); Stats.KalojaKerättyPunainen++;
             //onnistumis ääni?
         }
         else

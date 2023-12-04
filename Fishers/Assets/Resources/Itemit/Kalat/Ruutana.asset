@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5243fa14578eb18449d3c52e5b5f6ee2, type: 3}
-  m_Name: Siika
+  m_Name: Ruutana
   m_EditorClassIdentifier: 
-  id: 9
-  itemName: Siika
-  color: {r: 1, g: 0.92876494, b: 0.106000006, a: 1}
-  rarity: kultainen
+  id: 14
+  itemName: Ruutana
+  color: {r: 1, g: 0, b: 0, a: 0}
+  rarity: punainen
   value: 50
   currentStack: 1
   startTime: 0

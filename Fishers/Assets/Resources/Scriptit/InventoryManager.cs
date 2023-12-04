@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
+
 public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager Instance;
@@ -25,18 +27,11 @@ public class InventoryManager : MonoBehaviour
             questItem.criteriaCurrent = 0;
         }
     }
-    private void Update()
-    {
-        if (VuorokausiRytmi.hours == 8 && VuorokausiRytmi.mins == 0 && VuorokausiRytmi.seconds == 0)
-        {
-            GiveQuest();
-        }
-    }
     public void QuestCompleted(QuestItem questItem)
     {
         lompakko += questItem.questReward;
     }
-    public void QuestCriteriaCheck(KalaItem kala)
+    public void QuestCriteriaCheck(KalaItem kala)//tarkistaa vastaako saadun kalan ominaisuudet questissä etsittyjä ominaisuuksia
     {
         foreach (QuestItem quest in quests)
         {
@@ -103,36 +98,53 @@ public class InventoryManager : MonoBehaviour
             inventory.Add(kala);
         }
         RefreshInventory();
-        
-        RefreshQuestPanel();
-        QuestCriteriaCheck(kala);
+
+        QuestCriteriaCheck(kala);        
     }
+    private void FixedUpdate()
+    {
+        RefreshQuestPanel();
+    }
+    public GameObject onkiPanelContent;
+    public List<OnkiItem> pelaajanOnget = new List<OnkiItem>();
     public Transform questContent;
     public GameObject questPrefab;
     // harmaa = D9D9D9
     // vihreä = 00FF00
     // sininen = 0000FF
     // liila = FF00FF
-    // kultainen = FFEB04    
-    public void RefreshQuestPanel()
+    // kulta = FFEB04    
+    // punainen = FF0000
+    public void RefreshQuestPanel()//poistaa questi paneelin sisällön ja piirtää sen uudelleen
     {
         CleanQuests();
         for (int i = 0; i < quests.Count; i++)
         {
             if (quests[i].QuestIsActive)
             {
-                GameObject QuestSlot = Instantiate(questPrefab, questContent);
-                var title = QuestSlot.transform.Find("title").GetComponent<TextMeshProUGUI>();
-                string shownDesc = string.Format(quests[i].desc, quests[i].displaydRarity, quests[i].criteriaCurrent, quests[i].criteriaNeeded,quests[i].questReward);
-                title.text = shownDesc;
+                GameObject QuestSlot = Instantiate(questPrefab, this.questContent);
+                var questContent = QuestSlot.transform.Find("title").GetComponent<TextMeshProUGUI>();
+                string shownDesc = quests[i].desc + quests[i].descInfo;
+                string rewardText = "<color=#FFEB04>" + quests[i].questReward.ToString() + " kultaa</color>";
+                if(quests[i].startHour == 0 && quests[i].endHour == 24)//päivä questien formatointi
+                {
+                    shownDesc = string.Format(shownDesc, quests[i].displaydRarity, quests[i].criteriaCurrent, quests[i].criteriaNeeded, rewardText);
+                }
+                else//yölle sijoittuvien questien formatointi erillainen jotta kellon aika näkyy
+                {
+                    shownDesc += " ({4}-{5})";
+                    shownDesc = string.Format(shownDesc, quests[i].displaydRarity, quests[i].criteriaCurrent, quests[i].criteriaNeeded, rewardText, quests[i].startHour, quests[i].endHour);
+                }
+                
+                questContent.text = shownDesc;
             }
         }
     }
-    public void GiveQuest()//voi antaa vaan kaksi tai yksi questiä
+    public void GiveQuest(int amoutOfQuest, List<QuestItem> questitlista)//antaa x määrän questejä pelaajalle
     {
-        for (int q = 0; q <= quests.Count; q++)
+        for (int q = 0; q <= amoutOfQuest; q++)
         {
-            quests[Random.RandomRange(0, quests.Count)].QuestIsActive = true;
+            questitlista[Random.RandomRange(0, quests.Count)].QuestIsActive = true;
         }
         foreach (QuestItem questItem in quests)
         {
@@ -152,14 +164,14 @@ public class InventoryManager : MonoBehaviour
             itemCount.text = inventory[i].currentStack.ToString();
         }
     }
-    public void CleanQuests()
+    public void CleanQuests()//tyhjentää näkyvän questi listan
     {
         foreach (Transform childtransform in questContent)
         {
             Destroy(childtransform.gameObject);
         }
     }
-    public void RemoveQuest(QuestItem quest)
+    public void RemoveQuest(QuestItem quest)//tyhjentää näkyvän questi listan ja poistaa questien sisällön
     {
         foreach (Transform childtransform in questContent)
         {
@@ -183,6 +195,9 @@ public class InventoryManager : MonoBehaviour
         }
     }
     private int lompakko = 0;
+
+
+    //väliaikainen
     public void Myykalat()
     {
         if (inventory.Count == 0) return;
@@ -196,8 +211,6 @@ public class InventoryManager : MonoBehaviour
     }
     private int invVal = 0;
     public Stats stats;
-
-
     //väliaikainen
     public void DebugInfo()
     {
@@ -207,14 +220,14 @@ public class InventoryManager : MonoBehaviour
         int vih = 0;
         int sin = 0;
         int lii = 0;
-        int kul = 0;
+        int pun = 0;
         foreach (KalaItem kala in inventory)
         {
             if (kala.rarity == "harmaa") { har = har + kala.currentStack; }
             if (kala.rarity == "vihreä") { vih = vih + kala.currentStack; }
             if (kala.rarity == "sininen") { sin = sin + kala.currentStack; }
             if (kala.rarity == "liila") { lii = lii + kala.currentStack; }
-            if (kala.rarity == "kultainen") { kul = kul + kala.currentStack; }
+            if (kala.rarity == "punainen") { pun = pun + kala.currentStack; }
 
             inventoryValue = inventoryValue + kala.value * kala.currentStack;
             invVal = inventoryValue;
@@ -228,7 +241,7 @@ public class InventoryManager : MonoBehaviour
             GameObject KalojaNapattuTextDebug = GameObject.Find("KalojaNapattuTextDebug");
             GameObject TunnitPelattuTextDebug = GameObject.Find("TunnitPelattuTextDebug");
 
-            KalojenHarvinaisuusDebug.GetComponent<TextMeshProUGUI>().text = "harmaat: " + har + "\nvihreät: " + vih + "\nsiniset :" + sin + "\nliilat: " + lii + "\nkultaiset: " + kul;
+            KalojenHarvinaisuusDebug.GetComponent<TextMeshProUGUI>().text = "harmaat: " + har + "\nvihreät: " + vih + "\nsiniset :" + sin + "\nliilat: " + lii + "\npunaiset: " + pun;
             KalojenArvoDebug.GetComponent<TextMeshProUGUI>().text = "Kalojen arvo: " + inventoryValue.ToString();
             KalojenMääräDebug.GetComponent<TextMeshProUGUI>().text = "kalat: " + totalStack;
 

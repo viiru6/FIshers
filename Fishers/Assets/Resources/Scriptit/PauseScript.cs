@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PauseScript : MonoBehaviour
 {
     public List<GameObject> gameObjectsToDisable = new List<GameObject>();
+    public GameObject pauseMenu;
     private bool pause;
     void Update()
     {
@@ -14,8 +15,7 @@ public class PauseScript : MonoBehaviour
     public void Resume()
     {
         pause = false;
-        GameObject pausemenu = GameObject.Find("Pausemenu(Clone)");
-        Destroy(pausemenu);
+        pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         foreach (GameObject gameobject in gameObjectsToDisable)
         {
@@ -25,7 +25,7 @@ public class PauseScript : MonoBehaviour
     void paussi()
     {
         pause = true;
-        GameObject.Instantiate(Resources.Load("Menut/Pausemenu"));
+        pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         foreach(GameObject gameobject in gameObjectsToDisable)
         {
