@@ -8,9 +8,9 @@ public class StatsController : MonoBehaviour
     public Stats Stats;
     public GameObject statsPanel;
     bool statsPanelActive;
-    void Update()//tiedot p‰ivitet‰‰n kun statsPanel on auki
+    void Update()
     {
-        if (statsPanel.active) { DisplayStats(); }
+        if (statsPanel.active) { DisplayStats(); }//jos stats paneeli on auki sen tiedot p‰ivitet‰‰n
 
         if (Input.GetKeyDown(KeyCode.W) == true)
         {
