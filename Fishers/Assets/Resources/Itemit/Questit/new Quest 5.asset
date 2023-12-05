@@ -10,16 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d5e34f97cb7e40a4285b3d84962c25b4, type: 3}
-  m_Name: KalastusQuest 1
+  m_Name: new Quest 5
   m_EditorClassIdentifier: 
-  id: 1
-  desc: 'nappaa kaloja({0}) {1}/{2} <color=#FFF9B2>Palkinto: {3} kultaa</color>'
-  criteriaNeeded: 3
+  id: 5
+  desc: nappaa kaloja
+  descInfo: ({0}) {1}/{2} {3}
+  criteriaNeeded: 2
   criteriaCurrent: 0
-  questReward: 1
+  questReward: 100
   startHour: 0
   endHour: 24
-  displaydRarity: <color=#FF00FF>liila</color>
-  rarity: liila
+  displaydRarity: <color=#FF0000>punainen</color>
+  rarity: punainen
   QuestIsActive: 0
   anyRarity: 0

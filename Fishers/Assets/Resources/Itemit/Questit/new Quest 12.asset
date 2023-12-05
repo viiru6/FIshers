@@ -10,16 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d5e34f97cb7e40a4285b3d84962c25b4, type: 3}
-  m_Name: KalastusQuest 5
+  m_Name: new Quest 12
   m_EditorClassIdentifier: 
-  id: 5
-  desc: nappaa kaloja({0}) {1}/{2} {3}
-  criteriaNeeded: 1000
+  id: 12
+  desc: "nappaa kaloja y\xF6ll\xE4"
+  descInfo: ({0}) {1}/{2} {3}
+  criteriaNeeded: 50
   criteriaCurrent: 0
-  questReward: 9
-  startHour: 0
-  endHour: 24
-  displaydRarity: <color=#9C9CF5>kaikki</color>
+  questReward: 25
+  startHour: 21
+  endHour: 6
+  displaydRarity: <color=#63F7FF>kaikki</color>
   rarity: 
   QuestIsActive: 0
   anyRarity: 1

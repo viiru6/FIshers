@@ -10,6 +10,6 @@ public class init : MonoBehaviour
         GameObject Asetukset = GameObject.Find("Asetukset(Clone)");
         Destroy(Asetukset);
         
-        GameObject.Instantiate(Resources.Load("Menut/Mainmenu"));       
+        GameObject.Instantiate(Resources.Load("Menut/Mainmenu"));
     }
 }

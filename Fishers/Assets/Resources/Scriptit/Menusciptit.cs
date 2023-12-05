@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Menusciptit : MonoBehaviour
 {
     public GameObject mainmenu;
+    public Stats Stats;
     public void Pelaa()
     {
         SceneManager.LoadScene("MainScene");
@@ -17,10 +18,16 @@ public class Menusciptit : MonoBehaviour
     }
     public void Poistu()
     {
+        Stats.kerratPeliAvattu++;
         Application.Quit();
     }
     public void Mainmenu()
     {
         SceneManager.LoadScene("Mainmenu");
+    }
+    public void Kauppa()
+    {
+        SceneManager.LoadScene("kauppa");
+        Stats.kerratPeliAvattu++;
     }
 }

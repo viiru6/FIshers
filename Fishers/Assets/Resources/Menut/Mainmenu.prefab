@@ -1098,9 +1098,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainmenu: {fileID: 7475501108936102359}
-  PauseScript: {fileID: 0}
-  takaisinMainmenuun: 0
-  takaisinPeliin: 0
+  Stats: {fileID: 11400000, guid: 42b740c029d8e3547bae62c1d56628a5, type: 2}
 --- !u!1 &8073807233423380788
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,10 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79d44695bc327cd40a8dae88461d0981, type: 3}
-  m_Name: Onki_puinenMatoOnki
+  m_Script: {fileID: 11500000, guid: 5243fa14578eb18449d3c52e5b5f6ee2, type: 3}
+  m_Name: Made
   m_EditorClassIdentifier: 
-  itemName: Puinen mato onki
-  id: 0
-  power: 1.5
-  speed: 2
+  id: 15
+  itemName: Made
+  color: {r: 0, g: 0, b: 1, a: 0}
+  rarity: sininen
+  value: 10
+  currentStack: 1
+  startTime: 0
+  endTime: 24

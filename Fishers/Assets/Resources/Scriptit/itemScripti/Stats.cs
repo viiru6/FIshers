@@ -9,7 +9,7 @@ public class Stats : ScriptableObject
     public int KalojaKerättyVihreä;
     public int KalojaKerättySininen;
     public int KalojaKerättyLiila;
-    public int KalojaKerättyKultainen;
+    public int KalojaKerättyPunainen;
     public int KalojaKerättyYhteensä;
     public int KerratKalastettu;
     public int RahaaTienattuYhteensä;
@@ -20,7 +20,9 @@ public class Stats : ScriptableObject
 
     [Tooltip("pelin sisäiset päivät kuleneet")]
     public int päivätPelattu;
-    public int peliLadattuKerrat;
+    public int kerratPeliAvattu;
 
     public int aikaSekuntteina;
+
+    public int KerratKauppaAvattu;
 }

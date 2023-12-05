@@ -10,11 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5243fa14578eb18449d3c52e5b5f6ee2, type: 3}
-  m_Name: Kirjolohi
+  m_Name: "T\xE4pl\xE4rapu"
   m_EditorClassIdentifier: 
-  id: 10
-  itemName: Kirjolohi
-  color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  rarity: kultainen
-  value: 50
+  id: 13
+  itemName: "T\xE4pl\xE4rapu"
+  color: {r: 1, g: 0, b: 1, a: 0}
+  rarity: liila
+  value: 25
   currentStack: 1
+  startTime: 0
+  endTime: 24

@@ -11,9 +11,10 @@ public class VuorokausiRytmi : MonoBehaviour
     public TextMeshProUGUI timeDisplayText;
     public TextMeshProUGUI dayDisplayText;
     public Volume ppv;
+    public InventoryManager InventoryManager;
 
     public float tick;
-    public static float seconds;
+    public static float seconds = 59;
     public static int mins = 59;
     public static int hours = 7;
     public int days = 1;
@@ -43,10 +44,14 @@ public class VuorokausiRytmi : MonoBehaviour
             hours += 1;
         }
         if (hours >= 24)
-        {
+        {            
             hours = 0;
             days += 1;
             Stats.päivätPelattu++;
+        }
+        if(hours == 8 && mins == 0 && seconds == 0)
+        {
+            InventoryManager.GiveQuest(InventoryManager.quests);
         }
         ControlPPV();
     }
