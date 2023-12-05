@@ -7,13 +7,14 @@ using UnityEngine.UI;
 public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager Instance;
-    public VuorokausiRytmi VuorokausiRytmi;
     public List<QuestItem> quests = new List<QuestItem>();
     public List<KalaItem> inventory = new List<KalaItem>();
     public Transform inventoryContent;
     public GameObject inventorySlot;
     public DebugMenuScript DebugMenuScript;
     private int fishCaught;
+
+    public int QuestienM‰‰r‰;
 
     private void Awake()//luo singletonin
     {
@@ -30,6 +31,7 @@ public class InventoryManager : MonoBehaviour
     public void QuestCompleted(QuestItem questItem)
     {
         lompakko += questItem.questReward;
+        questItem.criteriaCurrent = 0;
     }
     public void QuestCriteriaCheck(KalaItem kala)//tarkistaa vastaako saadun kalan ominaisuudet questiss‰ etsittyj‰ ominaisuuksia
     {
@@ -140,9 +142,9 @@ public class InventoryManager : MonoBehaviour
             }
         }
     }
-    public void GiveQuest(int amoutOfQuest, List<QuestItem> questitlista)//antaa x m‰‰r‰n questej‰ pelaajalle
+    public void GiveQuest(List<QuestItem> questitlista)//antaa x m‰‰r‰n questej‰ pelaajalle
     {
-        for (int q = 0; q <= amoutOfQuest; q++)
+        for (int q = 0; q <= QuestienM‰‰r‰; q++)
         {
             questitlista[Random.RandomRange(0, quests.Count)].QuestIsActive = true;
         }

@@ -8976,18 +8976,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faaf858220c57b34e8cae073e2b94b8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  VuorokausiRytmi: {fileID: 0}
   quests:
-  - {fileID: 11400000, guid: 61e9afad458d98943af9a364ea3a637c, type: 2}
-  - {fileID: 11400000, guid: 483027ed4d16b2048a5f4af2febcddde, type: 2}
-  - {fileID: 11400000, guid: 9fcd27ce06233a24aa6295d920e4ad90, type: 2}
-  - {fileID: 11400000, guid: 1ab9e53d5c671e345a35b89dc97759d7, type: 2}
-  - {fileID: 11400000, guid: 531a18912eec0434fa0192e13736371a, type: 2}
-  - {fileID: 11400000, guid: f2254ac166b7b1b48b5035eef9273391, type: 2}
+  - {fileID: 11400000, guid: ad62a563efaf92045a5910a8925e14d2, type: 2}
+  - {fileID: 11400000, guid: c23760abb4c4fea469a561522cf3d763, type: 2}
+  - {fileID: 11400000, guid: 24e855cad189bed4abe5b02557675d8e, type: 2}
+  - {fileID: 11400000, guid: 3a326d511e7bf8c48aef7c5d002d282d, type: 2}
+  - {fileID: 11400000, guid: b6986fd17491f8c4db1fcce944894fb8, type: 2}
+  - {fileID: 11400000, guid: f4ddc8c3511b8754c80a48e83418bfdf, type: 2}
+  - {fileID: 11400000, guid: 94d63faa7a01d064bb4bbc89034a2371, type: 2}
+  - {fileID: 11400000, guid: f318114e808360d459ae6dfc3e437196, type: 2}
+  - {fileID: 11400000, guid: 34096a55cd9ad934194bc6b00ad13123, type: 2}
+  - {fileID: 11400000, guid: c01a72414f5edc1419c88fceccf93b9a, type: 2}
+  - {fileID: 11400000, guid: 9cb3a66ff75e74e4383ba3c72e6efb21, type: 2}
+  - {fileID: 11400000, guid: 275ba90490a299f4cb8d02619186d78e, type: 2}
   inventory: []
   inventoryContent: {fileID: 1932795549}
   inventorySlot: {fileID: 3407739517004215966, guid: 1510e473c67da7848a7ca8d9695367a9, type: 3}
   DebugMenuScript: {fileID: 1921539476}
+  "QuestienM\xE4\xE4r\xE4": 3
   onkiPanelContent: {fileID: 1028487142}
   pelaajanOnget:
   - {fileID: 11400000, guid: a158ffe1226331543aaf39e1ca92b969, type: 2}

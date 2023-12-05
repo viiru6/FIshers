@@ -14,7 +14,7 @@ public class VuorokausiRytmi : MonoBehaviour
     public InventoryManager InventoryManager;
 
     public float tick;
-    public static float seconds;
+    public static float seconds = 59;
     public static int mins = 59;
     public static int hours = 7;
     public int days = 1;
@@ -51,7 +51,7 @@ public class VuorokausiRytmi : MonoBehaviour
         }
         if(hours == 8 && mins == 0 && seconds == 0)
         {
-            InventoryManager.GiveQuest(3, InventoryManager.quests);
+            InventoryManager.GiveQuest(InventoryManager.quests);
         }
         ControlPPV();
     }
