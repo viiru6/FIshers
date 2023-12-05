@@ -12,18 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2319e02c3d9fd274dab38fe417bd7f8d, type: 3}
   m_Name: PlayerStats
   m_EditorClassIdentifier: 
-  "KalojaKer\xE4ttyHarmaa": 658
-  "KalojaKer\xE4ttyVihre\xE4": 959
-  "KalojaKer\xE4ttySininen": 465
-  "KalojaKer\xE4ttyLiila": 149
+  "KalojaKer\xE4ttyHarmaa": 0
+  "KalojaKer\xE4ttyVihre\xE4": 0
+  "KalojaKer\xE4ttySininen": 0
+  "KalojaKer\xE4ttyLiila": 0
   "KalojaKer\xE4ttyPunainen": 0
-  "KalojaKer\xE4ttyYhteens\xE4": 2264
-  KerratKalastettu: 2211
-  "RahaaTienattuYhteens\xE4": 1795
-  KerratMyyty: 9
-  AikaPelattuSekunnit: 4358
-  AikaPelattuTunnit: 1.2105555555555556
-  "p\xE4iv\xE4tPelattu": 17
-  kerratPeliAvattu: 1
-  aikaSekuntteina: 34411
+  "KalojaKer\xE4ttyYhteens\xE4": 0
+  KerratKalastettu: 0
+  "RahaaTienattuYhteens\xE4": 0
+  KerratMyyty: 0
+  AikaPelattuSekunnit: 0
+  AikaPelattuTunnit: 0
+  "p\xE4iv\xE4tPelattu": 1
+  kerratPeliAvattu: 0
+  aikaSekuntteina: 0
   KerratKauppaAvattu: 0
