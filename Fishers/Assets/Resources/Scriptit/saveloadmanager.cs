@@ -32,7 +32,7 @@ public class saveloadmanager : MonoBehaviour
             Stats.KalojaKerättyVihreä = 0;
             Stats.KalojaKerättySininen = 0;
             Stats.KalojaKerättyLiila = 0;
-            Stats.KalojaKerättyKultainen = 0;
+            Stats.KalojaKerättyPunainen = 0;
             Stats.KalojaKerättyYhteensä = 0;
             Stats.KerratKalastettu = 0;
             Stats.RahaaTienattuYhteensä = 0;
